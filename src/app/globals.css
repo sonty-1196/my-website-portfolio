@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0b12; /* near-black with a hint of blue */
+  --foreground: #e5e7eb; /* neutral-200 */
+  --muted: #a3a3a3;
+
+  /* Neon gradient stops */
+  --neon-from: #22d3ee; /* cyan-400 */
+  --neon-via: #a855f7;  /* purple-500 */
+  --neon-to: #f472b6;   /* pink-400 */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Base */
+html, body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Neon utilities and minimal site chrome */
+@utility neon-text {
+  background-image: linear-gradient(90deg, var(--neon-from), var(--neon-via), var(--neon-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility neon-ring {
+  --tw-ring-color: color-mix(in oklab, var(--neon-via) 60%, white 0%);
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--neon-via) 40%, transparent),
+              0 0 40px -10px color-mix(in oklab, var(--neon-via) 60%, transparent);
+}
+
+@utility card {
+  @apply rounded-xl border border-white/5 bg-white/5 backdrop-blur-sm transition hover:border-white/10;
+}
+
+@utility btn {
+  @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition;
+}
+
+@utility btn-primary {
+  background-image: linear-gradient(90deg, var(--neon-from), var(--neon-via), var(--neon-to));
+  color: black;
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--neon-via) 30%, transparent), 0 8px 30px -10px var(--neon-via);
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--neon-via) 50%, transparent), 0 16px 40px -10px var(--neon-via);
+}
+
+@utility btn-ghost {
+  @apply text-foreground/80 hover:text-foreground border border-white/10 hover:border-white/20;
+}
+
+/* Subtle background grid + glow */
+.bg-grid {
+  background:
+    radial-gradient(900px 500px at 10% 10%, color-mix(in oklab, var(--neon-from) 20%, transparent), transparent 60%),
+    radial-gradient(900px 500px at 90% 20%, color-mix(in oklab, var(--neon-to) 18%, transparent), transparent 60%),
+    linear-gradient(to bottom, color-mix(in oklab, white 6%, transparent), transparent 25%),
+    color-mix(in oklab, black 94%, var(--background) 6%);
+}
+
+/* Link underline style */
+.link-underline {
+  background: linear-gradient(90deg, var(--neon-from), var(--neon-to));
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: left 100%;
+  transition: background-size .3s ease;
+}
+.link-underline:hover { background-size: 100% 2px; }
+
+/* Gradient accent bar */
+@utility gradient-bar {
+  height: 2px;
+  background-image: linear-gradient(90deg, var(--neon-from), var(--neon-via), var(--neon-to));
+  opacity: 0.9;
+}
+
+/* Card with gradient border */
+@utility card-gradient {
+  position: relative;
+  padding: 1px;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, color-mix(in oklab, var(--neon-from) 60%, transparent), color-mix(in oklab, var(--neon-to) 60%, transparent));
+}
+.card-surface {
+  border-radius: inherit;
+  background: color-mix(in oklab, black 70%, transparent);
+}
+
+/* Hero glow */
+.hero-glow { position: relative; }
+.hero-glow::before,
+.hero-glow::after {
+  content: "";
+  position: absolute;
+  inset: auto;
+  filter: blur(40px);
+  z-index: -1;
+  border-radius: 9999px;
+}
+.hero-glow::before {
+  width: 480px; height: 300px; left: -40px; top: -40px;
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--neon-from) 35%, transparent), transparent 70%);
+}
+.hero-glow::after {
+  width: 520px; height: 320px; right: -60px; top: -20px;
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--neon-to) 35%, transparent), transparent 70%);
+}
+
+/* Badge */
+@utility badge {
+  @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium border border-white/10 bg-white/5 backdrop-blur;
+}
+@utility badge-accent {
+  background-image: linear-gradient(90deg, color-mix(in oklab, var(--neon-from) 15%, transparent), color-mix(in oklab, var(--neon-to) 15%, transparent));
+  border-color: transparent;
+}
