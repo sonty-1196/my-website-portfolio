@@ -74,7 +74,7 @@ export default function Home() {
         <div className="space-y-4">
           <div className="card p-4">
             <div className="flex items-center justify-between">
-              <h3 className="font-medium">Student Projects & Collaborations</h3>
+              <h3 className="font-medium">Student Projects</h3>
               <span className="text-xs text-foreground/60">2025</span>
             </div>
             <p className="mt-2 text-sm text-foreground/80">
@@ -83,8 +83,8 @@ export default function Home() {
           </div>
           <div className="card p-4">
             <div className="flex items-center justify-between">
-              <h3 className="font-medium">Student Projects & Collaborations</h3>
-              <span className="text-xs text-foreground/60">2024</span>
+              <h3 className="font-medium">Group Collaboration</h3>
+              <span className="text-xs text-foreground/60">2023-2025</span>
             </div>
             <p className="mt-2 text-sm text-foreground/80">
               Analyzed social media posts to determine the public sentiment and identify trends, key insights using Python in a team
