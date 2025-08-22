@@ -8,8 +8,8 @@ type Project = {
 
 export function ProjectCard({ title, description, tech, link, repo }: Project) {
   return (
-    <div className="card-gradient transition hover:scale-[1.01]">
-      <div className="card-surface p-5">
+    <div className="card-gradient h-full transition hover:scale-[1.01]">
+      <div className="card-surface h-full p-5 flex flex-col">
         <h3 className="font-semibold text-lg">{title}</h3>
         <p className="mt-2 text-sm text-foreground/80">{description}</p>
         <div className="mt-3 flex flex-wrap gap-2">
@@ -19,7 +19,7 @@ export function ProjectCard({ title, description, tech, link, repo }: Project) {
             </span>
           ))}
         </div>
-        <div className="mt-4 flex gap-3">
+        <div className="mt-auto pt-4 flex gap-3">
           {link ? (
             <a className="btn btn-primary" href={link} target="_blank" rel="noreferrer">
               Live
