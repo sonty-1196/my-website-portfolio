@@ -78,17 +78,17 @@ export default function Home() {
               <span className="text-xs text-foreground/60">2025</span>
             </div>
             <p className="mt-2 text-sm text-foreground/80">
-              Contributed in the development of Stock Market App in a team using Agile methodologies </p>
+              Contributed in the development of Stock Market App in a team using Agile methodologies
+            </p>
           </div>
-        </div>
-        <div className="space-y-4">
           <div className="card p-4">
             <div className="flex items-center justify-between">
               <h3 className="font-medium">Student Projects & Collaborations</h3>
               <span className="text-xs text-foreground/60">2024</span>
             </div>
             <p className="mt-2 text-sm text-foreground/80">
-              Analyzed social media posts to determine the public sentiment and identify trends, key insights using Python in a team</p>
+              Analyzed social media posts to determine the public sentiment and identify trends, key insights using Python in a team
+            </p>
           </div>
         </div>
       </Section>
