@@ -47,7 +47,7 @@ export default function Home() {
             <li key={s} className="px-3 py-1 rounded-full bg-white/10 border border-white/10">{s}</li>
           ))}
         </ul>
-      </Section>
+      </Section> 
 
       {/* Projects */}
       <Section id="projects" eyebrow="Projects" title="Selected work">
