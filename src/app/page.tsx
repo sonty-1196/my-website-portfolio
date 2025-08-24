@@ -21,10 +21,10 @@ export default function Home() {
           <div className="mt-6 flex flex-wrap gap-3">
             <a href="#projects" className="btn btn-primary">View Projects</a>
             <a href="#contact" className="btn btn-ghost">Get in Touch</a>
-            <a href="/Daewansh_Internship_Resume.pdf" className="btn btn-ghost" target="_blank" rel="noreferrer" download>Download CV</a>
+            <a href="/Internship_CV_Daewansh.pdf" className="btn btn-ghost" target="_blank" rel="noreferrer" download>Download CV</a>
           </div>
         </div>
-      </section>
+      </section>  
 
       {/* About */}
       <Section id="about" eyebrow="About" title="Who I am">
